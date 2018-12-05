@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from '../../routes/HomeRoute/index';
-import Detail from '../../components/Detail';
+import Detail from '../../routes/DetailRoute/index';
 
 const App = () => (
     <Router>
@@ -16,7 +16,8 @@ const App = () => (
             </nav>
 
             <Route path="/" exact component={Home} />
-            <Route path="/:id" render={props => <Detail {...props} extra={{asd:123 }} />} />
+            <Route path="/:id" render={props => <Detail {...props} />} />
+            <Route path="/new" componenet={Detail} />
         </div>
     </Router>
 );
